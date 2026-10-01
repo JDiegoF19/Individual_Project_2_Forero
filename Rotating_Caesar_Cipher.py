@@ -9,8 +9,7 @@ class Rotating_CC:
         return self.RCC(msg, shift)
 
     def RCC_decrypt(self, msg, shift):
-        # TODO - decryption will be added later
-        pass
+        return self.RCC(msg, -shift)
 
     def RCC(self, msg, shift):
         new_msg = ""
