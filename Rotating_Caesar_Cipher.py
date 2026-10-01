@@ -9,8 +9,7 @@ class Rotating_CC:
         return self.RCC(msg, shift)
 
     def RCC_decrypt(self, msg, shift):
-        # TODO - delete 'pass' and replace with the correct code to decrypt.
-        # note - the shift parameter is the encryption integer.
+        # TODO - decryption will be added later
         pass
 
     def RCC(self, msg, shift):
@@ -21,12 +20,13 @@ class Rotating_CC:
             if ch in self.ALPHA:
                 i = self.ALPHA.index(ch)
                 ch = self.ALPHA[(i + new_shift) % len(self.ALPHA)]
+                new_shift += shift
 
             elif ch in self.alpha:
                 i = self.alpha.index(ch)
                 ch = self.alpha[(i + new_shift) % len(self.alpha)]
+                new_shift += shift
 
-            new_shift += shift
             new_msg += ch
 
         return new_msg
