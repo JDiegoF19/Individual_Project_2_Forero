@@ -20,11 +20,11 @@ class Rotating_CC:
         for ch in msg:
             if ch in self.ALPHA:
                 i = self.ALPHA.index(ch)
-                ch = self.ALPHA[i + new_shift]
+                ch = self.ALPHA[(i + new_shift) % len(self.ALPHA)]
 
             elif ch in self.alpha:
                 i = self.alpha.index(ch)
-                ch = self.alpha[i + new_shift]
+                ch = self.alpha[(i + new_shift) % len(self.alpha)]
 
             new_shift += shift
             new_msg += ch
